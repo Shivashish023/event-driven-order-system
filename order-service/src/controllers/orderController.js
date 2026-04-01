@@ -7,7 +7,7 @@ import { Order } from "../models/orderModel.js";
     await publishOrderCreated(order);
     res.status(201).json(order);
   } catch (err) {
-    console.error("Order creation error:", err);fafa
+    console.error("Order creation error:", err);
     res.status(500).json({ error: "Order creation failed", details: err.message });
   }
 };

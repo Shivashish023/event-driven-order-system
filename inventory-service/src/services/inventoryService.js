@@ -4,7 +4,6 @@ import { resInventory } from "../models/resModel.js";
 const checkAvailability = async (items) => {
     try {
         console.log("Checking availability for items:", items);
-        
         const productIds = items.map((item) => item.productId);
         const [inventory, reservedAgg] = await Promise.all([
             Inventory.find({ productId: { $in: productIds } }),

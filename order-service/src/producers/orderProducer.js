@@ -5,13 +5,11 @@ let isConnected = false;
 
 const publishOrderCreated = async (order) => {
     try {
-       
         if (!isConnected) {
             await producer.connect();
             isConnected = true;
             console.log("Kafka producer connected");
         }
-        
         await producer.send({
             topic: "order-events",
             messages: [{

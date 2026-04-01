@@ -8,7 +8,7 @@ import paymentConsumer from "./consumers/paymentConsumer.js";
 
 const app = express();
 app.use(express.json());
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5002;
 
 connectDb();
 app.use("/inventory", router);

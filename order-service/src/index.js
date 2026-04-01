@@ -8,7 +8,7 @@ import inventoryConsumer from "./consumers/inventoryConsumer.js";
 const app = express();
 app.use(express.json());
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 5001;
 
 connectDb();
 
