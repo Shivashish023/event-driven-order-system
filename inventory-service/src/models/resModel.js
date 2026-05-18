@@ -26,8 +26,16 @@ const resInvSchema=mongoose.Schema(
             type:String,
             enum:["PENDING", "CONFIRMED", "RELEASED"],
             default:"PENDING"
+        },
+        expiresAt:{
+            type:Date,
+            required:true,
+            index:true,
         }
     },
     { timestamps: true }
 );
+
+resInvSchema.index({ status: 1, expiresAt: 1 });
+
 export const resInventory=mongoose.model("resInventory",resInvSchema);

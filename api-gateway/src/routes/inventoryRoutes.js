@@ -3,7 +3,6 @@ import { proxyRequest } from "../controllers/proxyController.js";
 import protect from "../middleware/authMiddleware.js";
 
 const router = express.Router();
-
 router.use(protect);
 
 router.use((req, res) => proxyRequest(req, res, "INVENTORY"));
